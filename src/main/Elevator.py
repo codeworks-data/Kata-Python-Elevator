@@ -9,6 +9,20 @@ class Elevator:
         self._current_floor = 0
         self._door: Door = Door()
 
+    def get_door(self):
+        """
+        Getter for the attribute _door
+        :return: Door
+        """
+        return self._door
+
+    def get_current_floor(self) -> int:
+        """
+        Getter for _current_floor
+        :return: int
+        """
+        return self._current_floor
+
     def go_to_floor(self, floor_number: int):
         """
         Move the elevator to the requested floor

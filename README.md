@@ -34,3 +34,22 @@ In the `src/main` folder, you should create your classes and in the `src/test` f
 
 ## Test it
 It is you task to create tests according to your own implementation.
+
+
+## How to run and test
+``` 
+git clone --branch adnene-first-try https://github.com/codeworks-data/Kata-Python-Elevator.git
+cd Kata-Python-Elevator
+export $PYTHONPATH=($PWD)/src/main
+```
+
+### Run main
+```
+python src/main/main.py
+```
+
+### Run tests
+```
+python src/test/ElevatorTest.py
+python src/test/FloorButtonsTest.py
+```

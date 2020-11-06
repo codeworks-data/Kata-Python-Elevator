@@ -1,5 +1,6 @@
 from DoorStatus import DoorStatus
 
+
 class Door:
     def __init__(self):
         self._status: DoorStatus = DoorStatus.CLOSED
