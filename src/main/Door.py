@@ -1,22 +1,21 @@
 from DoorStatus import DoorStatus
+from AbstractDoor import AbstractDoor
 
 
-class Door:
+class Door(AbstractDoor):
     def __init__(self):
-        self._status: DoorStatus = DoorStatus.CLOSED
+        super()
 
-    def get_status(self) -> DoorStatus:
+    def open_door(self):
         """
-        Getter for status attribute
-        :return: DoorStatus(enum)
-        """
-        return self._status
-
-    def set_status(self, status: DoorStatus):
-        """
-        Setter of status attribute
-        :param status: DoorStatus
+        Open the door
         :return: None
         """
-        self._status = status
-        print(f'Door status is {status}')
+        self.set_status(DoorStatus.OPEN)
+
+    def close_door(self):
+        """
+        Close the door
+        :return: None
+        """
+        self.set_status(DoorStatus.CLOSED)

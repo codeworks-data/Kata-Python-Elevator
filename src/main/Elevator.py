@@ -1,13 +1,13 @@
 from time import sleep
 
+from AbstractDoor import AbstractDoor
 from Door import Door
-from DoorStatus import DoorStatus
 
 
 class Elevator:
     def __init__(self):
         self._current_floor = 0
-        self._door: Door = Door()
+        self._door: AbstractDoor = Door()
 
     def get_door(self):
         """
@@ -30,6 +30,6 @@ class Elevator:
         """
         self._current_floor = floor_number
         print(f'\nElevator stopping at floor: {self._current_floor}')
-        self._door.set_status(DoorStatus.OPEN)
+        self._door.open_door()
         sleep(1)
-        self._door.set_status(DoorStatus.CLOSED)
+        self._door.close_door()

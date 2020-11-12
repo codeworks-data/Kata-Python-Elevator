@@ -22,7 +22,14 @@ class ElevatorTest(unittest.TestCase):
 
         with patch('__main__.ElevatorTest.elevator._door') as door_object:
             self.elevator.go_to_floor(requested_floor)
-            door_object.set_status.assert_any_call(DoorStatus.OPEN)
+            door_object.open_door.asser_call()
+
+    def test_elevator_should_close_door(self):
+        requested_floor = 3
+
+        with patch('__main__.ElevatorTest.elevator._door') as door_object:
+            self.elevator.go_to_floor(requested_floor)
+            door_object.close_door.asser_call()
 
     def test_door_of_elevator_should_be_closed_after_go_to_floor(self):
         requested_floor = 4
