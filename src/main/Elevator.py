@@ -1,13 +1,13 @@
 from time import sleep
 
 from AbstractDoor import AbstractDoor
-from Door import Door
+from DoorWithSensorWhileClosing import DoorWithSensorWhileClosing
 
 
 class Elevator:
     def __init__(self):
         self._current_floor = 0
-        self._door: AbstractDoor = Door()
+        self._door: AbstractDoor = DoorWithSensorWhileClosing()
 
     def get_door(self):
         """
