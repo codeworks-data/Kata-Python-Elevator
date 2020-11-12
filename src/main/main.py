@@ -1,12 +1,13 @@
 from Elevator import Elevator
 from FloorButtons import FloorButtons
-from ElevatorButtons import ElevatorButtons
+from ElevatorButtonsWithLights import ElevatorButtonsWithLights
 
 
 if __name__=='__main__':
 
+    NUMBER_OF_FLOORS = 10
     elevator = Elevator()
-    elevator_buttons = ElevatorButtons(elevator)
+    elevator_buttons = ElevatorButtonsWithLights(elevator, number_of_floors=NUMBER_OF_FLOORS)
     floor_buttons = FloorButtons(elevator)
 
     # Request one
