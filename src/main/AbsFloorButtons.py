@@ -2,7 +2,7 @@ import abc
 from Elevator import Elevator
 
 
-class AbsFloorButtons:
+class AbsFloorButtons(metaclass=abc.ABCMeta):
 
     def __init__(self, elevator: Elevator):
         self._elevator: Elevator = Elevator()
