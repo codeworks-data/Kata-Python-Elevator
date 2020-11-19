@@ -7,9 +7,8 @@ class AbsElevatorButtons(metaclass=abc.ABCMeta):
     """
     Abstract class for elevator buttons
     """
-
     def __init__(self, elevator: Elevator):
-        self._elevator = elevator
+        self._elevator: Elevator = elevator
 
     @abc.abstractmethod
     def request_floor(self, floor_number: int):

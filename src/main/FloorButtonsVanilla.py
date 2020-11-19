@@ -3,7 +3,9 @@ from AbsFloorButtons import AbsFloorButtons
 
 
 class FloorButtonsVanilla(AbsFloorButtons):
-
+    """
+    Concrete Floor Buttons class
+    """
     def __init__(self, elevator: Elevator):
         super().__init__(elevator)
 

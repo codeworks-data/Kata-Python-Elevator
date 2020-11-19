@@ -1,20 +1,20 @@
 import unittest
 from unittest.mock import patch
-from ElevatorButtonsVanilla import ElevatorButtonsVanilla
+from FloorButtonsVanilla import FloorButtonsVanilla
 from Elevator import Elevator
 
 
-class ElevatorButtonsVanillaTest(unittest.TestCase):
+class FloorButtonsVanillaTest(unittest.TestCase):
 
     def test_request_floor_should_call_go_to_floor(self):
         # Given
         with patch('__main__.Elevator') as MockElevator:
             elevator_instance = MockElevator.return_value
         requested_floor = 3
-        elevator_buttons_instance = ElevatorButtonsVanilla(elevator_instance)
+        floor_buttons_instance = FloorButtonsVanilla(elevator_instance)
 
         # When
-        elevator_buttons_instance.request_floor(requested_floor)
+        floor_buttons_instance.request_elevator_at(requested_floor)
 
         # Then
         elevator_instance.go_to_floor.assert_called_with(requested_floor)
