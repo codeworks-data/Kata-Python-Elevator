@@ -18,7 +18,19 @@ class ElevatorTest(unittest.TestCase):
         # Then
         self.assertEqual(requested_floor, actual_floor)
 
-    def test_go_to_floor_should_open_door(self):
+    def test_go_to_floor_should_call_open_door(self):
+
+        # Given
+        requested_floor = 5
+
+        # When
+        with patch('__main__.ElevatorTest.elevator._door') as door_object:
+            self.elevator.go_to_floor(requested_floor)
+
+        # Then
+        door_object.open_door.asser_call()
+
+    def test_go_to_floor_should_call_close_door(self):
 
         # Given
         requested_floor = 5
@@ -28,7 +40,7 @@ class ElevatorTest(unittest.TestCase):
             self.elevator.go_to_floor(requested_floor)
 
             # Then
-            door_object.open_door.assert_call()
+            door_object.close_door.asser_call()
 
 
 if __name__ == '__main__':
